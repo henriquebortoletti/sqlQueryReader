@@ -1,0 +1,49 @@
+{
+  "from": {
+    "columns": [
+      {
+        "fieldName": "Suppliers"
+      }
+    ]
+  },
+  "where": {
+    "columns": [
+      {
+        "operator": "Exists",
+        "fieldValue": {
+          "select": {
+            "columns": [
+              {
+                "fieldName": "ProductName"
+              }
+            ]
+          },
+          "from": {
+            "columns": [
+              {
+                "fieldName": "Products"
+              }
+            ]
+          },
+          "where": {
+            "columns": [
+              {
+                "operator": "AND",
+                "fieldName": {
+                  "operator": "EQUAL",
+                  "fieldName": "Products.SupplierID",
+                  "fieldValue": "Suppliers.supplierID"
+                },
+                "fieldValue": {
+                  "operator": "LESS",
+                  "fieldName": "Price",
+                  "fieldValue": "20"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

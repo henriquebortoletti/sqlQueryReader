@@ -1,0 +1,33 @@
+{
+  "select": {
+    "columns": [
+      {
+        "fieldName": [
+          "Orders.OrderID",
+          "Employees.LastName",
+          "Employees.FirstName"
+        ]
+      }
+    ]
+  },
+  "from": {
+    "columns": [
+      {
+        "fieldName": "Orders"
+      }
+    ]
+  },
+  "join": {
+    "type": "RIGHT",
+    "table": "Employees",
+    "on": {
+      "columns": [
+        {
+          "fieldName": "Orders.EmployeeID",
+          "operator": "Equal",
+          "fieldValue": "Employees.EmployeeID"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "select": {
+    "columns": [
+      {
+        "fieldName": [
+          "ProductId",
+          "ProductName"
+        ]
+      }
+    ]
+  },
+  "from": {
+    "columns": [
+      {
+        "fieldName": "Products"
+      }
+    ]
+  },
+  "where": {
+    "columns": [
+      {
+        "operator": "Equal",
+        "fieldName": "ProductId",
+        "fieldValue": {
+          "operator": "ALL",
+          "fieldValue": {
+            "select": {
+              "columns": [
+                {
+                  "fieldName": "ProductID"
+                }
+              ]
+            },
+            "from": {
+              "columns": [
+                {
+                  "fieldName": "OrderDetails"
+                }
+              ]
+            },
+            "where": {
+              "columns": [
+                {
+                  "operator": "Equal",
+                  "fieldName": "Quantity",
+                  "fieldValue": 10
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

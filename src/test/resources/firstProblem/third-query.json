@@ -1,0 +1,29 @@
+{
+  "select": {
+    "columns": [
+      {
+        "operator": "STAR"
+      }
+    ]
+  },
+  "from": {
+    "columns": [
+      {
+        "fieldName": "Products"
+      }
+    ]
+  },
+  "where": {
+    "columns": [
+      {
+        "operator": "Between",
+        "fieldName": "Price",
+        "fieldValue": {
+          "operator": "AND",
+          "fieldName": 50,
+          "fieldValue": 60
+        }
+      }
+    ]
+  }
+}

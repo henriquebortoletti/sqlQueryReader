@@ -1,0 +1,32 @@
+{
+  "select": {
+    "columns": [
+      {
+        "fieldName": [
+          "Customers.CustomerName",
+          "Orders.OrderID"
+        ]
+      }
+    ]
+  },
+  "from": {
+    "columns": [
+      {
+        "fieldName": "Customers"
+      }
+    ]
+  },
+  "join": {
+    "type": "FULL OUTER",
+    "table": "Orders",
+    "on": {
+      "columns": [
+        {
+          "fieldName": "Customers.CustomerID",
+          "operator": "Equal",
+          "fieldValue": "Orders.CustomerID"
+        }
+      ]
+    }
+  }
+}

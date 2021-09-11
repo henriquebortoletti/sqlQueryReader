@@ -1,0 +1,28 @@
+{
+  "select": {
+    "columns": [
+      {
+        "operator": "STAR"
+      }
+    ]
+  },
+  "from": {
+    "columns": [
+      {
+        "fieldName": "Customers"
+      }
+    ]
+  },
+  "where": {
+    "columns": [
+      {
+        "operator": "NOT",
+        "fieldName": "City",
+        "fieldValue": {
+          "operator": "LIKE",
+          "fieldValue": "('s%')"
+        }
+      }
+    ]
+  }
+}

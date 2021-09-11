@@ -1,0 +1,46 @@
+{
+  "select": {
+    "columns": [
+      {
+        "operator": "AS",
+        "fieldName": "A.CustomerName",
+        "fieldValue": "CustomerName1"
+      },
+      {
+        "operator": "AS",
+        "fieldName": "B.CustomerName",
+        "fieldValue": "CustomerName2"
+      },
+      {
+        "fieldName": "A.City"
+      }
+    ]
+  },
+  "from": {
+    "columns": [
+      {
+        "fieldName": "Customers A"
+      },
+      {
+        "fieldName": "Customers B"
+      }
+    ]
+  },
+  "where": {
+    "columns": [
+      {
+        "operator": "AND",
+        "fieldName": {
+          "operator": "DIFFERENT",
+          "fieldName": "A.CustomerID",
+          "fieldValue": "B.CustomerID"
+        },
+        "fieldValue": {
+          "operator": "Equal",
+          "fieldName": "A.City",
+          "fieldValue": "B.City"
+        }
+      }
+    ]
+  }
+}

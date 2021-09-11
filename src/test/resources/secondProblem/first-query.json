@@ -1,0 +1,32 @@
+{
+  "select": {
+    "columns": [
+      {
+        "fieldName": [
+          "Orders.OrderID",
+          "Customers.CustomerName"
+        ]
+      }
+    ]
+  },
+  "from": {
+    "columns": [
+      {
+        "fieldName": "Orders"
+      }
+    ]
+  },
+  "join": {
+    "type": "INNER",
+    "table": "Customers",
+    "on": {
+      "columns": [
+        {
+          "fieldName": "Orders.CustomerID",
+          "operator": "Equal",
+          "fieldValue": "Customers.CustomerID"
+        }
+      ]
+    }
+  }
+}

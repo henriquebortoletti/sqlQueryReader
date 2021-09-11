@@ -1,0 +1,33 @@
+{
+  "select": {
+    "columns": [
+      {
+        "operator": "STAR"
+      }
+    ]
+  },
+  "from": {
+    "columns": [
+      {
+        "fieldName": "Customers"
+      }
+    ]
+  },
+  "where": {
+    "columns": [
+      {
+        "operator": "AND",
+        "fieldName": {
+          "operator": "Equal",
+          "fieldName": "City",
+          "fieldValue": "\"London\""
+        },
+        "fieldValue": {
+          "operator": "Equal",
+          "fieldName": "Country",
+          "fieldValue": "\"UK\""
+        }
+      }
+    ]
+  }
+}
